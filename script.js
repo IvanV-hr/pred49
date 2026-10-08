@@ -16,7 +16,7 @@ let aktivnaPolja = [];
 let sljedeciOdabir = 0;
 
 novaIgraBtn.addEventListener("click", () => {
-  krug = 1;
+  //krug = 1;
   aktivnaPolja = [];
   sljedeciOdabir = 0;
 
