@@ -218,3 +218,29 @@ footer {
     gap: 8px;
   }
 }
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.polje {
+  flex: 1 1 30%;
+  height: 150px;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.polje:disabled {
+  cursor: default;
+}
+
+.polje.active {
+  background: rgb(251 251 94);
+  box-shadow: 0 0 0 5px rgb(225 225 3);
+  color: black;
+  font-weight: bold;
+}

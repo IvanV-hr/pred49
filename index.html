@@ -1,69 +1,78 @@
 <!doctype html>
 <html lang="hr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Predavanje 49 memory game" />
-        <title>Predavanje 49</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body id="pred49">
-        <a class="skip-veza" href="#glavni-sadrzaj">Preskoci na sadrzaj</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Predavanje 49 memory game" />
+    <title>Predavanje 49</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="pred49">
+    <a class="skip-veza" href="#glavni-sadrzaj">Preskoci na sadrzaj</a>
 
-        <header>
-            <div class="header-wrapper wrapper">
-                <a class="header-logo" href="index.html">JavaScript</a>
-                <button
-                    class="hamburger"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="header-nav"
-                    aria-label="Otvori izbornik"
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav id="header-nav" class="nav-izbornik" aria-label="Glavna navigacija">
-                    <ul class="header-linkovi">
-                        <li><a href="index.html" aria-current="page">Igra</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+    <header>
+      <div class="header-wrapper wrapper">
+        <a class="header-logo" href="index.html">JavaScript</a>
+        <button
+          class="hamburger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="header-nav"
+          aria-label="Otvori izbornik"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav
+          id="header-nav"
+          class="nav-izbornik"
+          aria-label="Glavna navigacija"
+        >
+          <ul class="header-linkovi">
+            <li><a href="index.html" aria-current="page">Igra</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-        <main id="glavni-sadrzaj">
-            <h1>Igra pamćenja</h1>
-            <section class="section">
-                <h2>Zapamti redoslijed</h2>
-                <p>Pokreni igru, zapamti polja koja bljesnu i pritisni ih istim redoslijedom.</p>
-                <button class="gumb" id="novaIgra" type="button">Nova igra</button>
-                <p id="stanje">Za pocetak pritisni Igraj.</p>
-                <div class="game">
-                    <button class="gumb polje" type="button" disabled>Polje 1</button>
-                    <button class="gumb polje" type="button" disabled>Polje 2</button>
-                    <button class="gumb polje" type="button" disabled>Polje 3</button>
-                    <button class="gumb polje" type="button" disabled>Polje 4</button>
-                    <button class="gumb polje" type="button" disabled>Polje 5</button>
-                    <button class="gumb polje" type="button" disabled>Polje 6</button>
-                </div>
-            </section>
-            <section class="section">
-                <h2>Najbolji rezultati</h2>
-                <ol id="rezultati"></ol>
-            </section>
-        </main>
+    <main id="glavni-sadrzaj">
+      <h1>Igra pamćenja</h1>
+      <section class="section">
+        <h2>Zapamti redoslijed</h2>
+        <p>
+          Pokreni igru, zapamti polja koja bljesnu i pritisni ih istim
+          redoslijedom.
+        </p>
+        <button class="gumb" id="novaIgra" type="button">Nova igra</button>
+        <p id="stanje">Za pocetak pritisni Igraj.</p>
+        <div class="game">
+          <button class="active gumb polje" type="button" disabled>
+            Polje 1
+          </button>
+          <button class="gumb polje" type="button" disabled>Polje 2</button>
+          <button class="gumb polje" type="button" disabled>Polje 3</button>
+          <button class="gumb polje" type="button" disabled>Polje 4</button>
+          <button class="gumb polje" type="button" disabled>Polje 5</button>
+          <button class="gumb polje" type="button" disabled>Polje 6</button>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Najbolji rezultati</h2>
+        <ol id="rezultati"></ol>
+      </section>
+    </main>
 
-        <footer>
-            <div class="wrapper">
-                <nav aria-label="Navigacija u podnozju">
-                    <ul class="footer-linkovi">
-                        <li><a href="index.html" aria-current="page">Igra</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </footer>
+    <footer>
+      <div class="wrapper">
+        <nav aria-label="Navigacija u podnozju">
+          <ul class="footer-linkovi">
+            <li><a href="index.html" aria-current="page">Igra</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
 
-        <script type="module" src="./script.js"></script>
-    </body>
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>
