@@ -1,0 +1,46 @@
+name: Objavi predavanje 48
+
+on:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  objava:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Preuzmi projekt
+        uses: actions/checkout@v6
+
+      - name: Postavi Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22.19.0"
+          cache: npm
+
+      - name: Instaliraj pakete
+        run: npm ci
+
+      - name: Provjeri i izgradi aplikaciju
+        run: npm run build -- --base=/${{ github.event.repository.name }}/
+
+      - name: Postavi GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Pripremi datoteke za objavu
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+      - name: Objavi na GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
