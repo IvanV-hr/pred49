@@ -11,7 +11,7 @@ function bljesni(polje) {
   setTimeout(() => polje.classList.remove("active"), 500);
 }
 
-let krug = 1;
+//let krug = 1;
 let aktivnaPolja = [];
 let sljedeciOdabir = 0;
 
@@ -59,7 +59,7 @@ function odaberiPolje(e) {
 
   if (sljedeciOdabir < aktivnaPolja.length) return;
 
-  krug++;
+  //krug++;
 
   setTimeout(noviKrug, 1000);
 }
