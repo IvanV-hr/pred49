@@ -36,17 +36,17 @@ function noviKrug() {
   prikaziNiz();
 }
 
-const wait = ms => new Promise(resolve => setTimeout(resolve,ms))
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function prikaziNiz() {
   omoguciPolja(false);
   poruka.textContent = "Zapamtite redosljed.";
 
   for (const polje of aktivnaPolja) {
-    bljesni(polje)
-    await wait(700)
+    bljesni(polje);
+    await wait(700);
   }
-   omoguciPolja(true);
+  omoguciPolja(true);
 }
 
 function odaberiPolje(e) {
@@ -99,7 +99,10 @@ function toggleIzbornik() {
   const izbornik = document.getElementById(this.getAttribute("aria-controls"));
 
   this.setAttribute("aria-expanded", String(otvoren));
-  this.setAttribute("aria-label", otvoren ? "Zatvori izbornik" : "Otvori izbornik");
+  this.setAttribute(
+    "aria-label",
+    otvoren ? "Zatvori izbornik" : "Otvori izbornik",
+  );
   izbornik.classList.toggle("otvoren", otvoren);
 }
 
