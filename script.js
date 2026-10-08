@@ -46,6 +46,8 @@ async function prikaziNiz() {
     bljesni(polje);
     await wait(700);
   }
+  
+  poruka.textContent = "Ponovi niz.";
   omoguciPolja(true);
 }
 
