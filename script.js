@@ -36,20 +36,17 @@ function noviKrug() {
   prikaziNiz();
 }
 
-function prikaziNiz() {
+const wait = ms => new Promise(resolve => setTimeout(resolve,ms))
+
+async function prikaziNiz() {
   omoguciPolja(false);
   poruka.textContent = "Zapamtite redosljed.";
-  let indeks = 0;
-  const interval = setInterval(() => {
-    if (indeks < aktivnaPolja.length) {
-      bljesni(aktivnaPolja[indeks]);
-      indeks++;
-    } else {
-      clearInterval(interval);
-      poruka.textContent = "Ponovi niz.";
-      omoguciPolja(true);
-    }
-  }, 700);
+
+  for (const polje of aktivnaPolja) {
+    bljesni(polje)
+    await wait(700)
+  }
+   omoguciPolja(true);
 }
 
 function odaberiPolje(e) {
@@ -83,11 +80,6 @@ function odaberiPolje(e) {
 }
 
 polja.forEach((polje) => polje.addEventListener("click", odaberiPolje));
-// 1. zadatak - implementiraj novi level,
-// nakon 5. kruga dodaj jos tri polja
-
-// 2. zadatak - prikazi 5 najboljih rezultata
-// spremi ih u localStorage
 
 function dodajPolja() {
   for (let i = 0; i < 3; i++) {
@@ -99,4 +91,19 @@ function dodajPolja() {
     ploca.append(polje);
     polja.push(polje);
   }
+}
+
+//nav
+function toggleIzbornik() {
+  const otvoren = this.getAttribute("aria-expanded") !== "true";
+  const izbornik = document.getElementById(this.getAttribute("aria-controls"));
+
+  this.setAttribute("aria-expanded", String(otvoren));
+  this.setAttribute("aria-label", otvoren ? "Zatvori izbornik" : "Otvori izbornik");
+  izbornik.classList.toggle("otvoren", otvoren);
+}
+
+const hamburgerGumb = document.querySelector(".hamburger");
+if (hamburgerGumb !== null) {
+  hamburgerGumb.addEventListener("click", toggleIzbornik);
 }
