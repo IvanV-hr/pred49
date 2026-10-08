@@ -219,7 +219,7 @@ footer {
   }
 }
 
-.game {
+#game {
   display: flex;
   flex-wrap: wrap;
   max-width: 500px;
@@ -235,6 +235,10 @@ footer {
 }
 
 .polje:disabled {
+  cursor: default;
+}
+
+#novaIgra:disabled {
   cursor: default;
 }
 
